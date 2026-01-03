@@ -1,0 +1,53 @@
+{
+  "name": "playwright-api-db-boilerplate",
+  "version": "1.0.0",
+  "description": "Test automation boilerplate for API testing with Playwright and SQL database validation",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test --grep @api",
+    "test:db": "playwright test --grep @db",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report:html": "playwright show-report",
+    "report:allure:generate": "allure generate allure-results -o allure-report --clean",
+    "report:allure:open": "allure open allure-report",
+    "report:allure": "npm run report:allure:generate && npm run report:allure:open",
+    "test:with-allure": "playwright test && npm run report:allure",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "typecheck": "tsc --noEmit",
+    "clean:reports": "rm -rf allure-results allure-report playwright-report test-results"
+  },
+  "keywords": [
+    "playwright",
+    "api-testing",
+    "sql",
+    "database",
+    "typescript",
+    "test-automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "1.57.0",
+    "@types/better-sqlite3": "7.6.13",
+    "@types/mssql": "^9.1.8",
+    "@types/node": "22.15.21",
+    "@types/pg": "8.15.2",
+    "allure-playwright": "3.4.3",
+    "dotenv": "17.2.3",
+    "eslint": "9.39.2",
+    "eslint-config-prettier": "10.1.5",
+    "prettier": "3.7.4",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.51.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "12.5.0",
+    "mssql": "12.2.0",
+    "mysql2": "3.16.0",
+    "pg": "8.16.3"
+  }
+}
